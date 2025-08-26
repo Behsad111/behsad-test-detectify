@@ -65,5 +65,36 @@
     <br>
     <p><a href="test.py">View the test API source code</a></p>
 
+    <!-- Simulerad AI-Chattbot med sårbarhet -->
+    <h2>🤖 AI Customer Support Chatbot (Beta)</h2>
+    <p>Experimentell AI drivet av "DeepThink API". Använd med försiktighet.</p>
+    <div id="chatbox" style="height: 150px; border: 1px solid #ccc; padding: 10px; overflow-y: scroll; margin-bottom: 10px;">
+        <p><b>AI:</b> Hej! Jag är den virtuella assistenten. Hur kan jag hjälpa dig idag?</p>
+    </div>
+    <form id="ai-chat-form">
+        <input type="text" id="user-input" placeholder="Skriv din fråga här..." style="width: 70%;">
+        <button type="submit">Skicka</button>
+    </form>
+
+    <script>
+        // Simulering av en osäker AI-chattfunktion
+        document.getElementById('ai-chat-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const userInput = document.getElementById('user-input').value;
+            const chatbox = document.getElementById('chatbox');
+
+            // Skriv ut användarens meddelande
+            chatbox.innerHTML += `<p><b>You:</b> ${userInput}</p>`;
+
+            // 🔥 Det här är den kritiska säkerhetsbristen!
+            // AI:ns "svar" är en direkt, osanerad återgivning av användarens input
+            // Detta simulerar en prompt injection/svarssårbarhet
+            chatbox.innerHTML += `<p><b>AI:</b> Jag förstår att du säger: "<span style="color: red;">${userInput}</span>". Låt mig hjälpa dig med det.</p>`;
+
+            // Rensa inputfältet
+            document.getElementById('user-input').value = '';
+            chatbox.scrollTop = chatbox.scrollHeight;
+        });
+    </script>
 </body>
 </html>
