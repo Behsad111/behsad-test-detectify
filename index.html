@@ -31,5 +31,31 @@
     <p>This feature uses a popular library.</p>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
+    <!-- Ytterligare ett externt, gammalt bibliotek -->
+    <h2>Old Library (Vue.js)</h2>
+    <p>This uses an old version of Vue.js for testing.</p>
+    <script src="https://unpkg.com/vue@2.5.0/dist/vue.js"></script>
+
+    <!-- Simulerat inloggningsformulär -->
+    <h2>Login (Simulated)</h2>
+    <p>This form uses the insecure POST method but sends data to a page that echoes it.</p>
+    <form action="login.html" method="POST">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- Gästbok med potentiell XSS -->
+    <h2>Guestbook</h2>
+    <p>Leave a comment in our guestbook!</p>
+    <form action="comment.php" method="GET">
+        <input type="text" name="comment" placeholder="Leave a comment!">
+        <button type="submit">Post Comment</button>
+    </form>
+
+    <!-- Länk till en misstänkt fil -->
+    <br>
+    <p><a href="config.bak">View our server configuration (just kidding!)</a></p>
+
 </body>
 </html>
