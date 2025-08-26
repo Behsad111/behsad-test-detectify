@@ -7,17 +7,29 @@
     <h1>Hej Detectify! 👋</h1>
     <p>Det här är en enkel satta för att testa skanning.</p>
     
-    <!-- En länk för crawler att följa -->
     <a href="about.html">Länk till en om-sida</a>
-    
     <br><br>
-   <!-- Den här länken är dold med CSS för användare, men syns för crawler -->
-   <a href="admin.html" style="display: none;">Hidden Admin Page</a>
     
-    <!-- Ett formulär för crawler att testa -->
     <form action="submit.html" method="GET">
         <label>Sök: <input type="text" name="search"></label>
         <button type="submit">Skicka</button>
     </form>
+
+    <!-- Dold administratörslänk -->
+    <a href="admin.html" style="display: none;">Hidden Admin Page</a>
+
+    <!-- Osäkert formulär -->
+    <h2>Contact Us (Old Form)</h2>
+    <form action="submit.html" method="GET">
+        <input type="text" name="email" placeholder="Your Email">
+        <input type="text" name="message" placeholder="Your Message">
+        <button type="submit">Send</button>
+    </form>
+
+    <!-- Externt bibliotek utan SRI -->
+    <h2>Cool Feature</h2>
+    <p>This feature uses a popular library.</p>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
 </body>
 </html>
