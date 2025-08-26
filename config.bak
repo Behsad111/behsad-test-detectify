@@ -1,0 +1,6 @@
+# This is a simulated backup config file
+database_host = "localhost"
+database_user = "admin"
+database_password = "super_secret_password_123"
+api_key = "ak_1234567890abcdef"
+debug_mode = true
