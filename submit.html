@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thank You!</title>
+</head>
+<body>
+    <h1>Thank You for Your Message!</h1>
+    <p>We will get back to you soon.</p>
+    <!-- Oops! We're echoing the user input directly back to the page -->
+    <p>You said: 
+        <!-- This is where a reflected XSS could happen -->
+        <script>
+            // This simple code takes the parameters from the URL and writes them to the page
+            const urlParams = new URLSearchParams(window.location.search);
+            const message = urlParams.get('message');
+            document.write(message);
+        </script>
+    </p>
+    <a href="index.html">Back to home</a>
+</body>
+</html>
